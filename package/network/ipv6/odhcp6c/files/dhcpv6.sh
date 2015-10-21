@@ -80,7 +80,7 @@ proto_dhcpv6_setup() {
 	[ "$sourcefilter" = "0" ] && proto_export "NOSOURCEFILTER=1"
 
 	proto_export "INTERFACE=$config"
-	proto_run_command "$config" odhcp6c \
+	proto_run_command "$config" /usr/sbin/odhcp6c \
 		-s /lib/netifd/dhcpv6.script \
 		$opts $iface
 }
